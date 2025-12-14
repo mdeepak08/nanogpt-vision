@@ -225,3 +225,35 @@ For more questions/discussions feel free to stop by **#nanoGPT** on Discord:
 ## acknowledgements
 
 All nanoGPT experiments are powered by GPUs on [Lambda labs](https://lambdalabs.com), my favorite Cloud GPU provider. Thank you Lambda labs for sponsoring nanoGPT!
+
+---
+
+## Project: Vision Transformer on MNIST + FashionMNIST [Deepak]
+
+This fork extends the nanoGPT vision branch with a Vision Transformer classifier trained on a mixed MNIST + FashionMNIST dataset (20 classes total). All experiments are reproducible via `train_colab.ipynb` on Google Colab (A100 GPU).
+
+### Baseline vs tuned model
+
+- **Baseline (`main.py`)**
+  - Embed size: 160, Layers: 6, Heads: 5, Epochs: 5
+  - Overall accuracy: ~92.64%
+
+- **Tuned model (`main_exp1.py`)**
+  - Embed size: 192, Layers: 8, Heads: 6, Epochs: 10
+  - Overall accuracy: **94.37%**
+  - MNIST accuracy: **98.79%**
+  - FashionMNIST accuracy: **89.95%**
+
+### Result visualizations
+
+Confusion matrix for the tuned model:
+
+![Confusion matrix](confusion_matrix.png)
+
+Dataset-wise accuracy comparison:
+
+![Dataset comparison](dataset_comparison.png)
+
+Example predictions from the tuned model:
+
+![Prediction examples](prediction_examples.png)
